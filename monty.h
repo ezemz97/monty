@@ -2,7 +2,8 @@
 #define MONTY_H
 #include <stdlib.h>
 #include <stdio.h>
-#include <strings.h>
+#include <string.h>
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -33,6 +34,6 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-stack_t *add_dnodeint_end(stack_t **head, const int n);
+void add_dnodeint_end(stack_t **head, const int line_number);
 
 #endif

@@ -6,7 +6,7 @@
   * @n: data
   * Return: New node
   */
-stack_t *add_dnodeint_end(stack_t **head, const int n)
+void add_dnodeint_end(stack_t **head, const int n)
 {
 	stack_t *new, *h;
 
@@ -15,7 +15,7 @@ stack_t *add_dnodeint_end(stack_t **head, const int n)
 	if (!new)
 	{
 		dprintf(2, "Error: Can't malloc\n");
-		return (NULL);
+		exit (-1);
 	}
 	new->n = n;
 	new->next = NULL;
@@ -25,12 +25,10 @@ stack_t *add_dnodeint_end(stack_t **head, const int n)
 			h = h->next;
 		new->prev = h;
 		h->next = new;
-		return (new);
 	}
 	else
 	{
 		new->prev = NULL;
 		*head = new;
-		return (new);
 	}
 }
