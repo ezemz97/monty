@@ -32,4 +32,7 @@ typedef struct instruction_s
         char *opcode;
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
+stack_t *add_dnodeint_end(stack_t **head, const int n);
+
 #endif

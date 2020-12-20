@@ -6,12 +6,12 @@
   * @n: data
   * Return: New node
   */
-dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
+stack_t *add_dnodeint_end(stack_t **head, const int n)
 {
-	dlistint_t *new, *h;
+	stack_t *new, *h;
 
 	h = *head;
-	new = malloc(sizeof(dlistint_t));
+	new = malloc(sizeof(stack_t));
 	if (!new)
 	{
 		dprintf(2, "Error: Can't malloc\n");
