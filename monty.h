@@ -34,6 +34,6 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-void add_dnodeint_end(stack_t **head, const int line_number);
+void add_dnodeint_end(stack_t **stack, unsigned int line_number);
 
 #endif

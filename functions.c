@@ -6,11 +6,11 @@
   * @n: data
   * Return: New node
   */
-void add_dnodeint_end(stack_t **head, const int n)
+void add_dnodeint_end(stack_t **stack, unsigned int n)
 {
 	stack_t *new, *h;
 
-	h = *head;
+	h = *stack;
 	new = malloc(sizeof(stack_t));
 	if (!new)
 	{
@@ -29,6 +29,6 @@ void add_dnodeint_end(stack_t **head, const int n)
 	else
 	{
 		new->prev = NULL;
-		*head = new;
+		*stack = new;
 	}
 }
