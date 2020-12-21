@@ -3,6 +3,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <ctype.h>
+
+extern char *val;
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -35,5 +38,6 @@ typedef struct instruction_s
 } instruction_t;
 
 void add_dnodeint_end(stack_t **stack, unsigned int line_number);
+void add_dnodeint(stack_t **stack, unsigned int line_number);
 
 #endif

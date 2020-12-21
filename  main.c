@@ -2,9 +2,11 @@
 int main(int ac, char *av[])
 {
 	FILE *fptr;
-	char *line = NULL, *opcod = NULL, *token = NULL;
-	int opval = 0;
-	size_t linebuff = 0, lineret = 0;
+	char *line = NULL, *opcod = NULL, *token = NULL, *val = NULL;
+	int x = 0, linecount = 0, flag = 0, lineret = 0;
+	size_t linebuff = 0;
+	char delimit[]=" \n";
+	stack_t *stack = NULL;
 
 	instruction_t codes[] = {{"push", add_dnodeint_end}, {NULL, NULL}};
 
@@ -22,12 +24,27 @@ int main(int ac, char *av[])
 	lineret = getline(&line, &linebuff, fptr);
 	while (lineret != EOF)
 	{
-		token = strtok(line, " ");
+		linecount++;
+		token = strtok(line, delimit);
 		if (strcmp(codes[0].opcode, token) == 0);
 		{
-			printf("yaay %s\n", token);
+			printf("%s", "dalegas");
+			flag = 1;
+			if (token[strlen(token) +1] != '\0')
+			{
+				token = strtok(NULL, delimit);
+				val = malloc(sizeof(strlen(token) + 1));
+				strcpy(val, token);
+				add_dnodeint(&stack, linecount);
+				free(val);
+			}	
 		}
 		lineret = getline(&line, &linebuff, fptr);
-	}
+	}	
+	/*if (flag == 0)
+	{
+		printf("L%d: unknown instruction %s", linecount, token);
+	}*/
+	
 	return (0);
 }
