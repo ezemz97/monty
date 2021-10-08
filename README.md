@@ -1,2 +1,2 @@
 # monty
-Awful frustrating project for the weekend
+Frustrating project for the weekend
